@@ -4,17 +4,44 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>AK Tech</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
-
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("user_JuXI0k1B1agpbwAvICqK5");
+    })();
+  </script>
+  <script type="text/javascript">
+    window.onload = function () {
+      document.getElementById('contact-form').addEventListener('submit', function (event) {
+        document.getElementById('loading').style.display = "block";
+        event.preventDefault();
+        // generate a five digit number for the contact_number variable
+        this.contact_number.value = Math.random() * 100000 | 0;
+        // these IDs from the previous steps
+        emailjs.sendForm('contact_service', 'contact_form', this)
+          .then(function () {
+            document.getElementById('sent_message').style.display = "block";
+            document.getElementById('loading').style.display = "none";
+            console.log('SUCCESS!');
+          }, function (error) {
+            document.getElementById('loading').style.display = "none";
+            document.getElementById('error_message').style.display = "block";
+            console.log('FAILED...', error);
+          });
+      });
+    }
+  </script>
   <!-- Favicons -->
   <link href="assets/img/favicon.ico" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
@@ -23,7 +50,6 @@
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
@@ -39,10 +65,13 @@
 
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
-    <div class="container d-flex justify-content-center justify-content-md-between">
+    <div class="container d-flex justify-content-center
+        justify-content-md-between">
       <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+        <i class="bi bi-envelope d-flex align-items-center"><a
+            href="mailto:ankush.chavan.info@gmail.com">ankush.chavan.info@gmail.com</a></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 8888
+            8283 47</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -58,7 +87,7 @@
     <div class="container d-flex justify-content-between">
 
       <div id="logo">
-        <h1><a href="index.html">Reve<span>al</span></a></h1>
+        <h1><a href="index.html">AK <span>Tech</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
       </div>
@@ -68,9 +97,9 @@
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-          <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
               <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
@@ -86,7 +115,7 @@
               <li><a href="#">Drop Down 3</a></li>
               <li><a href="#">Drop Down 4</a></li>
             </ul>
-          </li>
+          </li> -->
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -108,11 +137,16 @@
 
     <div class="hero-slider swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/1.jpg');"></div>
-        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/2.jpg');"></div>
-        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/3.jpg');"></div>
-        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/4.jpg');"></div>
-        <div class="swiper-slide" style="background-image: url('assets/img/hero-carousel/5.jpg');"></div>
+        <div class="swiper-slide" style="background-image:
+          url('assets/img/hero-carousel/1.jpg');"></div>
+        <div class="swiper-slide" style="background-image:
+          url('assets/img/hero-carousel/2.jpg');"></div>
+        <div class="swiper-slide" style="background-image:
+          url('assets/img/hero-carousel/3.jpg');"></div>
+        <div class="swiper-slide" style="background-image:
+          url('assets/img/hero-carousel/4.jpg');"></div>
+        <div class="swiper-slide" style="background-image:
+          url('assets/img/hero-carousel/5.jpg');"></div>
       </div>
     </div>
 
@@ -130,12 +164,18 @@
 
           <div class="col-lg-6 content">
             <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
-            <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>
+            <h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa
+              qui officia deserunt mollit anim id est laborum.</h3>
 
             <ul>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut
+                aliquip ex ea commodo consequat.</li>
+              <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in
+                reprehenderit in voluptate velit.</li>
+              <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate trideta storacalaperda mastiro dolore
+                eu fugiat nulla pariatur.</li>
             </ul>
 
           </div>
@@ -149,7 +189,10 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Services</h2>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna
+            elit veniam aliqua esse amet veniam enim export quid quid veniam
+            aliqua eram noster malis nulla duis fugiat culpa esse aute nulla
+            ipsum velit export irure minim illum fore</p>
         </div>
 
         <div class="row gy-4">
@@ -158,7 +201,9 @@
             <div class="box">
               <div class="icon"><i class="bi bi-briefcase"></i></div>
               <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident etiro rabeta lingo.</p>
+              <p class="description">Voluptatum deleniti atque corrupti quos
+                dolores et quas molestias excepturi sint occaecati cupiditate
+                non provident etiro rabeta lingo.</p>
             </div>
           </div>
 
@@ -166,7 +211,9 @@
             <div class="box">
               <div class="icon"><i class="bi bi-card-checklist"></i></div>
               <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata nodera clas.</p>
+              <p class="description">Minim veniam, quis nostrud exercitation
+                ullamco laboris nisi ut aliquip ex ea commodo consequat tarad
+                limino ata nodera clas.</p>
             </div>
           </div>
 
@@ -174,7 +221,9 @@
             <div class="box">
               <div class="icon"><i class="bi bi-bar-chart"></i></div>
               <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur trinige zareta lobur trade.</p>
+              <p class="description">Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur
+                trinige zareta lobur trade.</p>
             </div>
           </div>
 
@@ -182,7 +231,9 @@
             <div class="box">
               <div class="icon"><i class="bi bi-binoculars"></i></div>
               <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum rideta zanox satirente madera</p>
+              <p class="description">Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est
+                laborum rideta zanox satirente madera</p>
             </div>
           </div>
 
@@ -196,7 +247,10 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Clients</h2>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna
+            elit veniam aliqua esse amet veniam enim export quid quid veniam
+            aliqua eram noster malis nulla duis fugiat culpa esse aute nulla
+            ipsum velit export irure minim illum fore</p>
         </div>
 
         <div class="clients-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -221,7 +275,10 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Our Portfolio</h2>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna
+            elit veniam aliqua esse amet veniam enim export quid quid veniam
+            aliqua eram noster malis nulla duis fugiat culpa esse aute nulla
+            ipsum velit export irure minim illum fore</p>
         </div>
 
         <div class="row" data-aos="fade-up" data-aos-delay="100">
@@ -242,8 +299,10 @@
             <div class="portfolio-info">
               <h4>App 1</h4>
               <p>App</p>
-              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox
+                preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More
+                Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -252,8 +311,10 @@
             <div class="portfolio-info">
               <h4>Web 3</h4>
               <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox
+                preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More
+                Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -262,8 +323,10 @@
             <div class="portfolio-info">
               <h4>App 2</h4>
               <p>App</p>
-              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox
+                preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More
+                Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -272,8 +335,10 @@
             <div class="portfolio-info">
               <h4>Card 2</h4>
               <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox
+                preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More
+                Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -282,8 +347,10 @@
             <div class="portfolio-info">
               <h4>Web 2</h4>
               <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox
+                preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More
+                Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -292,8 +359,10 @@
             <div class="portfolio-info">
               <h4>App 3</h4>
               <p>App</p>
-              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox
+                preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More
+                Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -302,8 +371,10 @@
             <div class="portfolio-info">
               <h4>Card 1</h4>
               <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox
+                preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More
+                Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -312,8 +383,10 @@
             <div class="portfolio-info">
               <h4>Card 3</h4>
               <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox
+                preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More
+                Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -322,8 +395,10 @@
             <div class="portfolio-info">
               <h4>Web 3</h4>
               <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+              <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox
+                preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+              <a href="portfolio-details.html" class="details-link" title="More
+                Details"><i class="bx bx-link"></i></a>
             </div>
           </div>
 
@@ -337,7 +412,10 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Testimonials</h2>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna
+            elit veniam aliqua esse amet veniam enim export quid quid veniam
+            aliqua eram noster malis nulla duis fugiat culpa esse aute nulla
+            ipsum velit export irure minim illum fore</p>
         </div>
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
@@ -347,7 +425,10 @@
               <div class="testimonial-item">
                 <p>
                   <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                  Proin iaculis purus consequat sem cure digni ssim donec
+                  porttitora entum suscipit rhoncus. Accusantium quam, ultricies
+                  eget id, aliquam eget nibh et. Maecen aliquam, risus at
+                  semper.
                   <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
                 </p>
                 <img src="assets/img/testimonial-1.jpg" class="testimonial-img" alt="">
@@ -360,7 +441,10 @@
               <div class="testimonial-item">
                 <p>
                   <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+                  Export tempor illum tamen malis malis eram quae irure esse
+                  labore quem cillum quid cillum eram malis quorum velit fore
+                  eram velit sunt aliqua noster fugiat irure amet legam anim
+                  culpa.
                   <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
                 </p>
                 <img src="assets/img/testimonial-2.jpg" class="testimonial-img" alt="">
@@ -373,7 +457,9 @@
               <div class="testimonial-item">
                 <p>
                   <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
+                  Enim nisi quem export duis labore cillum quae magna enim sint
+                  quorum nulla quem veniam duis minim tempor labore quem eram
+                  duis noster aute amet eram fore quis sint minim.
                   <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
                 </p>
                 <img src="assets/img/testimonial-3.jpg" class="testimonial-img" alt="">
@@ -386,7 +472,10 @@
               <div class="testimonial-item">
                 <p>
                   <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
+                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa
+                  multos export minim fugiat minim velit minim dolor enim duis
+                  veniam ipsum anim magna sunt elit fore quem dolore labore
+                  illum veniam.
                   <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
                 </p>
                 <img src="assets/img/testimonial-4.jpg" class="testimonial-img" alt="">
@@ -399,7 +488,10 @@
               <div class="testimonial-item">
                 <p>
                   <img src="assets/img/quote-sign-left.png" class="quote-sign-left" alt="">
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
+                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua
+                  veniam tempor noster veniam enim culpa labore duis sunt culpa
+                  nulla illum cillum fugiat legam esse veniam culpa fore nisi
+                  cillum quid.
                   <img src="assets/img/quote-sign-right.png" class="quote-sign-right" alt="">
                 </p>
                 <img src="assets/img/testimonial-5.jpg" class="testimonial-img" alt="">
@@ -421,7 +513,10 @@
         <div class="row">
           <div class="col-lg-9 text-center text-lg-start">
             <h3 class="cta-title">Call To Action</h3>
-            <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p class="cta-text"> Duis aute irure dolor in reprehenderit in
+              voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
             <a class="cta-btn align-middle" href="#">Call To Action</a>
@@ -510,7 +605,7 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Contact Us</h2>
-          <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
+          <!-- <p>Sed tamen tempor magna labore dolore dolor sint tempor duis magna elit veniam aliqua esse amet veniam enim export quid quid veniam aliqua eram noster malis nulla duis fugiat culpa esse aute nulla ipsum velit export irure minim illum fore</p>
         </div>
 
         <div class="row contact-info">
@@ -539,42 +634,43 @@
             </div>
           </div>
 
+        </div> -->
         </div>
-      </div>
 
-      <div class="container mb-4">
+        <!-- <div class="container mb-4">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452" width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
+      </div> -->
+        <div class="container">
+          <div class="form">
+            <form id="contact-form" role="form" class="php-email-form">
+              <input type="hidden" name="contact_number">
 
-      <div class="container">
-        <div class="form">
-          <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-            <div class="row">
-              <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <input type="text" name="user_name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group col-md-6 mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="user_email" id="email" placeholder="Your Email"
+                    required>
+                </div>
               </div>
-              <div class="form-group col-md-6 mt-3 mt-md-0">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="user_subject" id="subject" placeholder="Subject" required>
               </div>
-            </div>
-            <div class="form-group mt-3">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group mt-3">
-              <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-            </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
 
-            <div class="my-3">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-            </div>
+              <div class="my-3">
+                <div class="loading" id="loading">Loading</div>
+                <div class="error-message" id="error_message">Error! something went wrong.</div>
+                <div class="sent-message" id="sent_message">Your message has been sent. Thank you!</div>
+              </div>
 
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
         </div>
-
-      </div>
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
@@ -583,7 +679,7 @@
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong>Reveal</strong>. All Rights Reserved
+        &copy; Copyright 2021 <strong>AK Tech</strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!--
@@ -597,7 +693,8 @@
     </div>
   </footer><!-- End Footer -->
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" class="back-to-top d-flex align-items-center
+      justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/aos/aos.js"></script>
